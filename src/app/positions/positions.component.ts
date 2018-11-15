@@ -6,11 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions.component.css']
 })
 export class PositionsComponent implements OnInit {
-  _id: string;
-  PositionName: string;
-  PositionDescription: string;
-  PositionBaseSalary: number;
-  __v: number;
+
   constructor() { }
 
   ngOnInit() {
