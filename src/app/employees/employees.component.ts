@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeesService } from '../data/employees.service';
+import { Employees } from '../data/employees';
 
 @Component({
   selector: 'app-employees',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-  
-  constructor() { }
+
+  private employees: Employees[];
+  private getEmployeesSub;
+  private loadingError: boolean = false;
+
+  constructor(private emp: EmployeesService) { }
 
   ngOnInit() {
+    this.getEmployeesSub = this.emp.getEmployees().subscribe(
+      employees => this.employees = employees,
+      function (e) {
+        this.loadingError = true;
+      });
+  }
+
+  ngOnDestroy() {
+
+    if (this.getEmployeesSub != 'undefined') {
+      this.getEmployeesSub.unsubscribe();
+    }
   }
 
 }
