@@ -1,3 +1,5 @@
+import { Positions } from './positions';
+
 export class Employees {
     _id:	string;
     FirstName:	string;
@@ -8,7 +10,7 @@ export class Employees {
     AddressZip:	string;
     PhoneNum:	string;
     Extension:	number;
-    Position:	Position;
+    Position:	Positions;
     HireDate:	string;
     SalaryBonus:	number;
     __v:	number;

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PositionsComponent implements OnInit {
 
-  private position: Positions[];
+  position: Positions[];
   private getPositionSub;
   private loadingError: boolean = false;
 

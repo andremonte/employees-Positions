@@ -26,7 +26,7 @@ export class PositionComponent implements OnInit {
     })
   }
 
-  onSubmit(f: NgForm): void {
+  onSubmit(): void {
     this.savePositionSubscription = this.pSer.savePosition(this.position).subscribe( pos => {
       this.successMessage = true;
       setTimeout( () => { this.successMessage = false;}, 2500);

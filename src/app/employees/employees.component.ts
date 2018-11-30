@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeesService } from '../data/employees.service';
 import { Employees } from '../data/employees';
 import { Router } from '@angular/router';
-
+import { Positions } from '../data/positions';
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeesComponent implements OnInit {
 
-  private employees: Employees[];
+  employees: Employees[];
   private getEmployeesSub;
   private loadingError: boolean = false;
   private filteredEmployees: Employees[];

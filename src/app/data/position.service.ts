@@ -17,9 +17,9 @@ export class PositionService {
   }
 
   savePosition(position: Positions) {
-    return this.http.put<any>(`${this.url}/positions/${position._id}`, position);
+    return this.http.put<any>(`${this.url}/position/${position._id}`, position);
   }
   getPosition(id: number | string) {
-    return this.http.get<Positions[]>(`${this.url}/positions/${id}`);
+    return this.http.get<Positions[]>(`${this.url}/position/${id}`);
   }
 }
