@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PositionService } from '../data/position.service';
 import { Positions } from '../data/positions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-positions',
@@ -13,7 +14,7 @@ export class PositionsComponent implements OnInit {
   private getPositionSub;
   private loadingError: boolean = false;
 
-  constructor(private pos: PositionService) { }
+  constructor(private pos: PositionService, private router: Router) { }
 
   ngOnInit() {
     this.getPositionSub = this.pos.getPositions().subscribe(
@@ -29,4 +30,5 @@ export class PositionsComponent implements OnInit {
     }
   }
 
+  routePosition(id:String) {this.router.navigate(['/position', id]);}
   }

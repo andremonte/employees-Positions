@@ -14,6 +14,7 @@ import { EmployeesService } from './data/employees.service';
 import { PositionService } from './data/position.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { PositionComponent } from './position/position.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PositionComponent } from './position/position.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [PositionService, EmployeesService],
   bootstrap: [AppComponent]

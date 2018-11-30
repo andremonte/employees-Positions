@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeesService } from '../data/employees.service';
 import { Employees } from '../data/employees';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employees',
@@ -13,7 +14,7 @@ export class EmployeesComponent implements OnInit {
   private getEmployeesSub;
   private loadingError: boolean = false;
 
-  constructor(private emp: EmployeesService) { }
+  constructor(private emp:EmployeesService, private router:Router) { }
 
   ngOnInit() {
     this.getEmployeesSub = this.emp.getEmployees().subscribe(
@@ -30,4 +31,5 @@ export class EmployeesComponent implements OnInit {
     }
   }
 
+  routeEmployee(id:String) {this.router.navigate(['/employee', id]);}
 }
