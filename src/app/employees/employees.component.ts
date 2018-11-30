@@ -13,6 +13,7 @@ export class EmployeesComponent implements OnInit {
   private employees: Employees[];
   private getEmployeesSub;
   private loadingError: boolean = false;
+  private filteredEmployees: Employees[];
 
   constructor(private emp:EmployeesService, private router:Router) { }
 
@@ -32,4 +33,12 @@ export class EmployeesComponent implements OnInit {
   }
 
   routeEmployee(id:String) {this.router.navigate(['/employee', id]);}
+
+  onEmployeeSearchKeyUP(event: any) {
+    this.filteredEmployees = this.employees.filter((employee) => {
+      return employee.FirstName.toLowerCase().includes(event.target.value)
+        || employee.LastName.toLowerCase().includes(event.target.value)
+        || employee.Position.PositionName.toLowerCase().includes(event.target.value);
+    });
+  }
 }

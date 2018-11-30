@@ -5,6 +5,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <input class="form-control" id="EmployeeSearch" name="EmployeeSearch" type="text" placeholder="Search Employees by Full Name or Position"
+        (keyup)="onEmployeeSearchKeyUP($event)" /><br />
       <div class="table-responsive">
         <table class="table table-condensed table-hover">
           <thead>
@@ -16,7 +18,8 @@
           <tbody *ngFor="let Employees of employees" (click)="routeEmployee(Employees._id)">
             <tr>
               <td>{{Employees.FirstName}} {{Employees.LastName}}</td>
-              <td>{{Employees.AddressStreet}}. {{Employees.AddressState}}, {{Employees.AddressCity}}. {{Employees.AddressZip}}</td>
+              <td>{{Employees.AddressStreet}}. {{Employees.AddressState}}, {{Employees.AddressCity}}.
+                {{Employees.AddressZip}}</td>
               <td>{{Employees.PhoneNum}} ext:{{Employees.Extension}}</td>
               <td>{{Employees.HireDate|date:'longDate'}}</td>
             </tr>
