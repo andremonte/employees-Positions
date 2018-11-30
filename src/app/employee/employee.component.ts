@@ -17,7 +17,7 @@ export class EmployeeComponent implements OnInit {
   employeeSubscription: any;
   getPositionsSubcription: any;
   saveEmployeeSubscription: any;
-  employee: EmployeeRaw;
+  employee: EmployeeRaw = new EmployeeRaw();
   positions: Positions[];
   successMessage: boolean = false;
   failMessage: boolean = false;

@@ -14,7 +14,7 @@ export class PositionComponent implements OnInit {
   paramSubscription: any;
   positionSubscription: any;
   savePositionSubscription: any;
-  position: Positions;
+  position: Positions = new Positions();
   successMessage: boolean = false;
   failMessage: boolean = false;
 

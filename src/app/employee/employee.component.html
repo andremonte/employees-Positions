@@ -24,7 +24,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="Position">Position:</label>
-          <select class="form-control" id="Position"  name="Position">
+          <select class="form-control" [(ngModel)]="employee.PositionName" id="Position"  name="Position">
             <option *ngFor="let pos of positions" [value]="pos._id">{{pos.PositionName}}>
             </option>
           </select>
