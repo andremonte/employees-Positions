@@ -16,7 +16,7 @@
             <th>Phone Number</th>
             <th>Hire Date</th>
           </thead>
-          <tbody *ngFor="let Employees of employees" (click)="routeEmployee(Employees._id)">
+          <tbody *ngFor="let Employees of filteredEmployees" (click)="routeEmployee(Employees._id)">
             <tr>
               <td>{{Employees.FirstName}} {{Employees.LastName}}</td>
               <td>{{Employees.AddressStreet}}. {{Employees.AddressState}}, {{Employees.AddressCity}}.

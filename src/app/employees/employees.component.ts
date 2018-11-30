@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 export class EmployeesComponent implements OnInit {
 
   employees: Employees[];
-  private getEmployeesSub;
+  getEmployeesSub;
   private loadingError: boolean = false;
-  private filteredEmployees: Employees[];
+  filteredEmployees: Employees[];
 
   constructor(private emp:EmployeesService, private router:Router) { }
 
