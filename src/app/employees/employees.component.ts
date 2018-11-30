@@ -34,7 +34,7 @@ export class EmployeesComponent implements OnInit {
 
   routeEmployee(id:String) {this.router.navigate(['/employee', id]);}
 
-  onEmployeeSearchKeyUP(event: any) {
+  onEmployeeSearchKeyUP(event:any) {
     this.filteredEmployees = this.employees.filter((employee) => {
       return employee.FirstName.toLowerCase().includes(event.target.value)
         || employee.LastName.toLowerCase().includes(event.target.value)
