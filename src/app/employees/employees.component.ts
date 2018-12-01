@@ -18,11 +18,15 @@ export class EmployeesComponent implements OnInit {
   constructor(private emp:EmployeesService, private router:Router) { }
 
   ngOnInit() {
-    this.getEmployeesSub = this.emp.getEmployees().subscribe(
-      employees => this.employees = employees,
-      function (e) {
-        this.loadingError = true;
-      });
+    try {
+      this.getEmployeesSub = this.emp.getEmployees().subscribe(employees => {
+        this.employees = employees;
+        this.filteredEmployees = employees;
+      })
+    }
+    catch (err) {
+      this.loadingError = true;
+    }
   }
 
   ngOnDestroy() {
