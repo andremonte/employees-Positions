@@ -7,18 +7,18 @@
     <div class="col-md-12">
       <div class="table-responsive">
         <table class="table table-condensed table-hover">
-            <thead>
-                <th>Position Title</th>
-                <th>Position Description</th>
-                <th>Salary</th>
-              </thead>
+          <thead>
+            <th>Position Title</th>
+            <th>Position Description</th>
+            <th>Salary</th>
+          </thead>
           <tbody *ngFor="let Positions of position" (click)="routePosition(Positions._id)">
-              <tr>
-                <td>{{Positions.PositionName}}</td>
-                <td>{{Positions.PositionDescription}}</td>
-                <td>${{Positions.PositionBaseSalary|number:'.2'}}</td>
-                <td></td>
-              </tr>
+            <tr>
+              <td>{{Positions.PositionName}}</td>
+              <td>{{Positions.PositionDescription}}</td>
+              <td>${{Positions.PositionBaseSalary|number:'.2'}}</td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -26,4 +26,3 @@
     </div>
   </div>
 </div>
-
