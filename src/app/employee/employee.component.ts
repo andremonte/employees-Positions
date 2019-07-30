@@ -19,10 +19,10 @@ export class EmployeeComponent implements OnInit {
   saveEmployeeSubscription: any;
   employee: EmployeeRaw = new EmployeeRaw();
   positions: Positions[];
-  successMessage: boolean = false;
-  failMessage: boolean = false;
+  successMessage: Boolean = false;
+  failMessage: Boolean = false;
 
-  constructor(private empServ:EmployeesService, private actRoute:ActivatedRoute, private PosServ:PositionService) { }
+  constructor(private empServ: EmployeesService, private actRoute: ActivatedRoute, private PosServ:PositionService) { }
 
   ngOnInit() {
     this.paramSubscription = this.actRoute.params.subscribe(params => {
@@ -31,9 +31,9 @@ export class EmployeeComponent implements OnInit {
 
         this.getPositionsSubcription = this.PosServ.getPositions().subscribe(pos => {
           this.positions = pos;
-        })
-      })
-    })
+        });
+      });
+    });
   }
 
   onSubmit(f: NgForm): void {

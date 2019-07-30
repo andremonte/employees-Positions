@@ -9,11 +9,11 @@ import { EmployeeRaw } from './employee-raw';
 })
 export class EmployeesService {
 
-  private url = "https://amteams.herokuapp.com";
+  private url = 'https://amteams.herokuapp.com';
 
   constructor(private http: HttpClient) { }
   getEmployees(): Observable<Employees[]> {
-    return this.http.get<Employees[]>(`${this.url}/employees`)
+    return this.http.get<Employees[]>('${this.url}/employees');
   }
 
   saveEmployee(employee: EmployeeRaw) {
